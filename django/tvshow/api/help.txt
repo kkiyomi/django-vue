@@ -1,0 +1,80 @@
+Generic Views(Class Based Views — CBV):
+
+    REST class based views are just like django class based views.
+    Every incoming request will be dispatched to the appropriate method handler just like django CBV.
+    APIView is the base class for all the DRF CBV and GenericAPIView is the base class for all the generic CBV.
+    Following are the generic views provided by the DRF
+    CreateAPIView, ListAPIView, RetrieveAPIView, DestroyAPIView, UpdateAPIView, ListCreateAPIView,
+    RetrieveUpdateAPIView, RetrieveDestroyAPIView, RetrieveUpdateDestroyAPIView
+    
+
+
+    CreateAPIView:
+    Inherit this class only if you want to create a model instance.
+    Just like CreateView in django.
+    Only allows the request type “POST”.
+    
+
+
+    ListAPIView:
+    Inherit this class only if you want to retrieve list of model instances.
+    It works just like ListView in django.
+    You can override the method “get_queryset” if you want conditional queryset to be returned.
+    It only allows the request type “GET”
+    
+
+
+    RetrieveAPIView:
+    Inherit this class only if you want to retrieve details of a specific model instance.
+    You have to provide a unique identifier as a argument in the url.
+    It works just like DetailView in django.
+    It only allows the request type “GET”
+    
+
+
+    DestroyAPIView:
+    Inherit this class only if you want to delete a model instance.
+    You have to provide a unique identifier as a argument in the url.
+    It only allows the request type “DELETE”
+    
+
+
+    UpdateAPIView:
+    Inherit this class only if you want to update a model instance.
+    You have to provide a unique identifier as a argument in the url.
+    Use request type “PUT” for complete update of model instance.
+    Use request type “PATCH” for partial update.
+    It only allows the request types “PUT”, “PATCH”
+    
+
+
+    ListCreateAPIView:
+    Inherit this class if you want to create a list of model instances at once.
+    It only allows the request types “GET”, “POST”
+    Use request type “POST” for creating the list of model instances.
+    Use request type “GET” for retrieving the list of model instances.
+    
+
+
+    RetrieveUpdateAPIView:
+    Inherit this class if you want both functionalities retriving and updating the model instance.
+    It allows request type “GET”, “PUT”, “PATCH”
+    
+
+
+    RetrieveDestroyAPIView:
+    Inherit this class if you want both functionalities retriving and deleting the model instance.
+    It allows request type “GET”, “DELETE”
+    
+
+
+    RetrieveUpdateDestroyAPIView:
+    Inherit this class if you want the three functionalities retrive, update, delete for the same url.
+    It allows request type “GET”, “DELETE”, “PUT” and “PATCH”
+
+    
+    Inherit the above mentioned classes based on your requirement.
+    Unlike in FBV we do not use decorators instead we use class attributes for rendereres, permissions, parsers, throttles, etc.
+    To customise default behaviour of the DRF by overriding the appropriate methods and attributes.
+    We need to configure the urls for CBV views.
+    To use CBV we must have basic understanding of Object Oriented Programming.

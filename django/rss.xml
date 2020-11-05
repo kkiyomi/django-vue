@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <atom:link href="http://yoursite.com/feed.xml" rel="self" type="application/rss+xml" />
+    <title>YourSite</title>
+    <link>http://YourSite.com</link>
+    <description>Something Describing Your Site</description>
+    <language>en-us</language>    
+    <item>
+      <title>Web Page 1 Title</title>
+      <pubDate>Mon, 6 Sep 2010 12:40:21 GMT</pubDate>
+      <link>http://yoursite.com/webpage1.html</link>
+      <guid>http://yoursite.com/item001</guid>
+      <description>Information about Web Page 1</description>
+    </item>
+  </channel>
+</rss>
